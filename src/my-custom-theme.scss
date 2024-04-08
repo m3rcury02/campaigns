@@ -1,0 +1,17 @@
+// my-custom-theme.scss
+@use '@angular/material' as mat;
+
+$my-custom-primary: mat.define-palette(mat.$teal-palette);
+$my-custom-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+$my-custom-warn: mat.define-palette(mat.$red-palette);
+
+$my-custom-theme: mat.define-light-theme((
+  color: (
+    primary: $my-custom-primary,
+    accent: $my-custom-accent,
+    warn: $my-custom-warn,
+  )
+));
+
+// Include the custom theme styles
+@include mat.all-component-themes($my-custom-theme);
